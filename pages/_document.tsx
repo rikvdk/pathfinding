@@ -20,6 +20,10 @@ export default class MyDocument extends Document {
               width: 100%;
               overflow-y:hidden;
             }
+
+            rect {
+              pointer-events: none;
+            }
           `}</style>
           <Main />
           <NextScript />

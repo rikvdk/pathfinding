@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Board from "../components/Board";
+import Cell from "../components/Cell";
 import FormControl from "@material-ui/core/FormControl";
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -10,6 +11,7 @@ import Select from "@material-ui/core/Select";
 import Slider from "@material-ui/core/Slider";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -45,6 +47,9 @@ const useStyles = makeStyles(() =>
 export default function Index() {
   const classes = useStyles();
   const [algorithm, setAlgorithm] = useState("A*");
+  const [start, setStart] = useState(new Cell(2, 2));
+  const [end, setEnd] = useState(new Cell(8, 2));
+  const [walls, setWalls] = useState(new Map<string, Cell>());
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     setAlgorithm(event.target.value as string);
@@ -81,7 +86,14 @@ export default function Index() {
           </Toolbar>
         </AppBar>
       </div>
-      <Board />
+      <Board
+        start={start}
+        setStart={setStart}
+        end={end}
+        setEnd={setEnd}
+        walls={walls}
+        setWalls={setWalls}
+      />
     </>
   );
 }
