@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import FormControl from '@material-ui/core/FormControl';
-import IconButton from '@material-ui/core/IconButton';
-import MenuItem from '@material-ui/core/MenuItem';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import Select from '@material-ui/core/Select';
-import Slider from '@material-ui/core/Slider';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import React, { useState } from "react";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import FormControl from "@material-ui/core/FormControl";
+import IconButton from "@material-ui/core/IconButton";
+import MenuItem from "@material-ui/core/MenuItem";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import Select from "@material-ui/core/Select";
+import Slider from "@material-ui/core/Slider";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -19,23 +19,23 @@ const useStyles = makeStyles(() =>
       flexGrow: 1,
     },
     select: {
-      color: '#fff',
+      color: "#fff",
       minWidth: 80,
-      '&:before': {
-        borderColor: '#fff',
+      "&:before": {
+        borderColor: "#fff",
       },
-      '&:after': {
-        borderColor: '#fff',
+      "&:after": {
+        borderColor: "#fff",
       },
-       '&:hover:not(.Mui-disabled):before': {
-           borderColor: '#fff',
+       "&:hover:not(.Mui-disabled):before": {
+           borderColor: "#fff",
        }
     },
     icon: {
-      fill: '#fff',
+      fill: "#fff",
     },
     slider: {
-      color: '#fff',
+      color: "#fff",
       minWidth: 80,
     },
   }),
@@ -43,7 +43,7 @@ const useStyles = makeStyles(() =>
 
 export default function Index() {
   const classes = useStyles();
-  const [algorithm, setAlgorithm] = useState('A*');
+  const [algorithm, setAlgorithm] = useState("A*");
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     setAlgorithm(event.target.value as string);
