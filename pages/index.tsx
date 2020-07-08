@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
+import Board from "../components/Board";
 import FormControl from "@material-ui/core/FormControl";
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -50,34 +51,37 @@ export default function Index() {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Pathfinding
-          </Typography>
+    <>
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" className={classes.title}>
+              Pathfinding
+            </Typography>
 
-          <FormControl>
-            <Select
-              className={classes.select}
-              inputProps={{classes: { icon: classes.icon }}}
-              value={algorithm}
-              onChange={handleChange}
-            >
-              <MenuItem value="A*">A*</MenuItem>
-              <MenuItem value="BFS">BFS</MenuItem>
-              <MenuItem value="DFS">DFS</MenuItem>
-              <MenuItem value="Dijkstra">Dijkstra</MenuItem>
-            </Select>
-          </FormControl>
-          <IconButton color="inherit" aria-label="delete">
-            <PlayArrowIcon />
-          </IconButton>
-          <FormControl>
-            <Slider min={0} max={100} className={classes.slider} />
-          </FormControl>
-        </Toolbar>
-      </AppBar>
-    </div>
+            <FormControl>
+              <Select
+                className={classes.select}
+                inputProps={{classes: { icon: classes.icon }}}
+                value={algorithm}
+                onChange={handleChange}
+              >
+                <MenuItem value="A*">A*</MenuItem>
+                <MenuItem value="BFS">BFS</MenuItem>
+                <MenuItem value="DFS">DFS</MenuItem>
+                <MenuItem value="Dijkstra">Dijkstra</MenuItem>
+              </Select>
+            </FormControl>
+            <IconButton color="inherit" aria-label="delete">
+              <PlayArrowIcon />
+            </IconButton>
+            <FormControl>
+              <Slider min={0} max={100} className={classes.slider} />
+            </FormControl>
+          </Toolbar>
+        </AppBar>
+      </div>
+      <Board />
+    </>
   );
 }
