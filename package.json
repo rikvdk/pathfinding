@@ -6,6 +6,7 @@
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
     "clsx": "latest",
+    "mnemonist": "^0.38.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
